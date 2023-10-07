@@ -51,6 +51,38 @@ function setup_gun_SS() {
       // use complete only when you set animations with
       "loop: false";
       //alert("animation End");
+      //we need to reset our universal flag
+      canIclick = 0;
+    },
+  });
+}
+
+//setup a newly created zombie
+function setup_zombie_SS(whichOne) {
+  //let’s identify what type of zombie we should create
+  var type_zombie = [1, 2, 3, 1, 2, 3];
+  //let’s setup a speed for each type of zombie
+  var speed_zombie = [100, 50, 150];
+  //first let’s setup our zombie SS
+  setup_SpriteSheet(
+    "#zombie" + whichOne,
+    "Images/zombiesSS_" + type_zombie[whichOne - 1] + ".png",
+    9,
+    20,
+    20
+  );
+  //need to access a special function in our js/ss.js file
+  $("#zombie" + whichOne).animateSprite({
+    fps: 10,
+    animations: {
+      static: [0, 1, 2, 3, 4, 5, 6, 7],
+    },
+    duration: speed_zombie[type_zombie[whichOne - 1] - 1],
+    loop: true,
+    complete: function () {
+      // use complete only when you set animations with
+      "loop: false";
+      //alert("animation End");
     },
   });
 }

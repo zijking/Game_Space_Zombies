@@ -14,4 +14,10 @@ function main_call_setupContent(ratio) {
   //Any sprite sheets?
   //Our Gun
   setup_gun_SS();
+
+//Create all our 6 zombies
+ for (i = 1; i < 7; i++) {
+ //this will get called 6 times
+ SZ_createZombie(i);
+ }
 }

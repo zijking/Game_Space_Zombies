@@ -15,3 +15,13 @@ function reloadGun(e) {
     $("#SZ0_1").animateSprite("play", "reload");
   }
 }
+
+//this function is called to fire our gun
+function fireGun(e) {
+//Let’s check if we can allow this to occur
+ if(canIclick== 0){
+ //looks like we can so we better set our flag
+ canIclick=1;
+ $("#SZ0_1").animateSprite("play", "fire");
+ }
+}

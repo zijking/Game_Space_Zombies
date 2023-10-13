@@ -85,4 +85,27 @@ function setup_zombie_SS(whichOne) {
       //alert("animation End");
     },
   });
+
+  //now let’s setup our bubble zombie SS
+  setup_SpriteSheet(
+    "#bubble_zombie" + whichOne,
+    "Images/SZ_bubble.png",
+    3,
+    20,
+    20
+  );
+  //need to access a special function in our js/ss.js file
+  $("#bubble_zombie" + whichOne).animateSprite({
+    fps: 10,
+    animations: {
+      z1: [type_zombie[whichOne - 1] - 1],
+    },
+    duration: 1,
+    loop: false,
+    complete: function () {
+      // use complete only when you set animations with
+      "loop: false";
+      //alert("animation End");
+    },
+  });
 }
